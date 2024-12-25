@@ -1,28 +1,22 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GlobalStateContext } from "../context/GlobalStateContext";
+import { fetchContacts } from "../hooks/useInstantDB";
 
 const ContactList = () => {
   const { state, dispatch } = useContext(GlobalStateContext);
-  const [isAdding, setIsAdding] = useState(false);
-  const [newContact, setNewContact] = useState({ name: "", profilePicture: "" });
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleAddContact = () => {
-    setIsAdding(true);
+  useEffect(() => {
+    fetchContacts().then((contacts) =>
+      dispatch({ type: "SET_CONTACTS", payload: contacts })
+    );
+  }, [dispatch]);
+
+  const handleContactClick = (contact) => {
+    dispatch({ type: "SET_SELECTED_CONTACT", payload: contact });
   };
 
-  const handleSaveContact = () => {
-    if (newContact.name.trim() && newContact.profilePicture.trim()) {
-      const contact = {
-        id: Date.now().toString(), // Generate a unique ID
-        ...newContact,
-      };
-      dispatch({ type: "SET_CONTACTS", payload: [...state.contacts, contact] });
-      setNewContact({ name: "", profilePicture: "" });
-      setIsAdding(false);
-    }
-  };
-
+  // Filter contacts based on the search term
   const filteredContacts = state.contacts.filter((contact) =>
     contact.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -35,44 +29,25 @@ const ContactList = () => {
         </h2>
         <input
           type="text"
-          placeholder="Search Contacts"
+          className="search-bar"
+          placeholder="Search contacts..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-input"
         />
-        <button onClick={handleAddContact} className="add-contact-button">
-          Add Contact
-        </button>
       </div>
-      {isAdding && (
-        <div className="add-contact-form">
-          <input
-            type="text"
-            placeholder="Contact Name"
-            value={newContact.name}
-            onChange={(e) => setNewContact({ ...newContact, name: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="Profile Picture URL"
-            value={newContact.profilePicture}
-            onChange={(e) =>
-              setNewContact({ ...newContact, profilePicture: e.target.value })
-            }
-          />
-          <button onClick={handleSaveContact} className="save-contact-button">
-            Save
-          </button>
-        </div>
-      )}
       {filteredContacts.map((contact) => (
         <div
           key={contact.id}
           className={`contact ${
             state.selectedContact?.id === contact.id ? "active" : ""
           }`}
+          onClick={() => handleContactClick(contact)}
         >
-          <img src={contact.profilePicture} alt={contact.name} className="contact-image" />
+          <img
+            src={contact.profilePicture}
+            alt={`${contact.name}'s profile`}
+            className="profile-picture"
+          />
           <span>{contact.name}</span>
         </div>
       ))}
