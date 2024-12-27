@@ -115,8 +115,6 @@ function Header() {
 export default App;
 3. Custom Hooks
 
-Custom hooks encapsulate reusable logic, such as fetching data or handling forms. They help in keeping the components clean and logic reusable.
-
 Example: Creating a custom hook for fetching data.
 
 function useFetchData(apiEndpoint) {
