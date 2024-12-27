@@ -144,6 +144,19 @@
     color: white;
     align-self: flex-end;
   }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .last-message {
+    font-size: 0.9em;
+    color: gray;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   
   .message.incoming {
     background-color: #e4e4e4;
