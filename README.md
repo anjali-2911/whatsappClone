@@ -86,6 +86,8 @@ function MedicationList() {
 }
 
 export default MedicationList;
+
+
 2. React Context
 
 React Context is used to share data (like user authentication or global settings) across multiple components without prop drilling. It's often paired with useContext for easy access to the context's values.
@@ -109,10 +111,12 @@ function App() {
 function Header() {
   const user = useContext(UserContext);
 
-  return <h1>Welcome, {user.name}!</h1>;
+  return <h6>Welcome, {user.name}!</h6>;
 }
 
 export default App;
+
+
 3. Custom Hooks
 
 Example: Creating a custom hook for fetching data.
