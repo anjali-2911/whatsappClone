@@ -16,13 +16,13 @@ Getting Started
 Prerequisites
 Ensure you have the following installed:
 
-Node.js (v14 or higher)
-npm (v6 or higher)
+Node.js (v20.9.0)
+npm (10.8.3)
 Installation
 Clone the Repository:
 
-bash
-Copy code
+Git Repository link
+
 git clone https://github.com/anjali-2911/WhatsappClone.git  
 Navigate to the Project Directory:
 
