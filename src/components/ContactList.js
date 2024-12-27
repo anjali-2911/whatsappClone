@@ -54,7 +54,7 @@ const ContactList = () => {
             />
             <div className="contact-info">
               <span className="contact-name">{contact.name}</span>
-              <span className="last-message">{lastMessage}</span>
+              <span className="last-message">{lastMessage}f</span>
             </div>
           </div>
         );
