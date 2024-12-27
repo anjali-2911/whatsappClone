@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+A real-time messaging application built using React.js, InstantDB, and IndexedDB. This application features a contact list, chat window, real-time messaging, and offline support, providing a seamless experience for users.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+1. Contact List: 
+2. Chat Window: 
+3. Real-Time Messaging: 
+4. Offline Support: 
+5. Responsive Design:
 
-## Available Scripts
+Technologies Used
+React.js: Front-end framework for building the user interface.
+InstantDB: Real-time database for storing and retrieving messages.
+IndexedDB: Local database for offline storage.
+React Context: For global state management.
+CSS (Flexbox/Grid): For responsive layout and design.
 
-In the project directory, you can run:
+I have installed:
 
-### `npm start`
+Node.js (v20.9.0)
+npm (10.8.3)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Git Repository link
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+git clone https://github.com/anjali-2911/WhatsappClone.git  
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Install Dependencies:
+   
+npm install  
+npm i bootstrap
 
-### `npm run build`
+2. Project setup
+npx create-react-app whatsapp-web-clone
+cd whatsapp-web-clone
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Open the Application in Your Browser:
+Navigate to http://localhost:3000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Configure InstantDB:
+Sign up for an account at InstantDB.
+Set up your database and obtain the API keys or credentials.
+Add these details to a .env file in the project root directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+REACT_APP_INSTANTDB_API_KEY=your_api_key  
+REACT_APP_INSTANTDB_URL=your_database_url  
+Running the Application
+Start the Development Server:
+npm start  
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Challenges Faced
+Real-Time Messaging: Synchronizing messages between InstantDB and IndexedDB.
+Offline Functionality: Managing IndexedDB storage and ensuring a smooth offline experience.
