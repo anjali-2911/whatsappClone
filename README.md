@@ -25,6 +25,7 @@ git clone https://github.com/anjali-2911/WhatsappClone.git
 
 
 1. Install Dependencies:
+   
 npm install  
 npm i bootstrap
 
@@ -36,7 +37,7 @@ npm start
 3. Open the Application in Your Browser:
 Navigate to http://localhost:3000.
 
-4.Configure InstantDB:
+4. Configure InstantDB:
 Sign up for an account at InstantDB.
 Set up your database and obtain the API keys or credentials.
 Add these details to a .env file in the project root directory:
